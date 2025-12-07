@@ -31,14 +31,16 @@ export const playTypeSound = () => {
 
     const oscGain = ctx.createGain();
     oscGain.gain.setValueAtTime(0.04, t); // Keep subtle
-    oscGain.gain.exponentialRampToValueAtTime(0.001, t + 0.06); // Short blip
+    // Shorter envelope for faster typing speeds (was 0.06)
+    oscGain.gain.exponentialRampToValueAtTime(0.001, t + 0.03); 
 
     osc.connect(oscFilter);
     oscFilter.connect(oscGain);
     oscGain.connect(ctx.destination);
     
     osc.start();
-    osc.stop(t + 0.07);
+    // Shorter duration for faster typing speeds (was 0.07)
+    osc.stop(t + 0.035);
 
     // --- 2. The Mechanical Click (Impact Noise) ---
     const bufferSize = ctx.sampleRate * 0.04; // 40ms duration

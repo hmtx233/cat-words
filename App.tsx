@@ -58,13 +58,24 @@ export default function App() {
       const timeStr = now.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' });
       const fullTimestamp = `${dateStr} ${weekDay} ${timeStr}`;
 
+      // Calculate initial position ensuring visibility
+      // Center horizontally (card width approx 320px, so offset by 160)
+      const startX = (windowSize.width / 2) - 160 + randomOffsetX;
+      
+      // Vertical position:
+      // Try to place it in the lower-middle section, but ensure it's not too low (hidden by typewriter)
+      // or too high (offscreen).
+      // We target roughly 550px from bottom, but ensure at least 100px from top.
+      const targetYFromBottom = 550;
+      const calculatedY = windowSize.height - targetYFromBottom + randomOffsetY;
+      const startY = Math.max(100, Math.min(calculatedY, windowSize.height - 400));
+
       const newCard: CardData = {
         id,
         text,
-        // Start near the typewriter output area (center-bottom)
         position: { 
-          x: (windowSize.width / 2) - 160 + randomOffsetX,  // Adjusted for wider card (320px/2 = 160)
-          y: windowSize.height - 450 + randomOffsetY 
+          x: startX,
+          y: startY
         },
         zIndex: maxZIndex + 1,
         rotation: (Math.random() * 6) - 3, // Random rotation between -3 and 3 degrees
