@@ -1,0 +1,5 @@
+{
+  "name": "Cat Words",
+  "description": "A retro-styled typewriter application called Cat Words that prints draggable cards with a slow-typing animation effect.",
+  "requestFramePermissions": []
+}
