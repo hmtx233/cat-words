@@ -1,34 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cat Words</title>
+    <title>Prompt Print Todo</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=VT323&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=VT323&display=swap"
+      rel="stylesheet"
+    />
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              mono: ['"Courier Prime"', 'Courier', 'monospace'],
-              pixel: ['"VT323"', 'monospace'],
+              mono: ['"Courier Prime"', "Courier", "monospace"],
+              pixel: ['"VT323"', "monospace"],
             },
             animation: {
-              'type-cursor': 'blink 1s step-end infinite',
+              "type-cursor": "blink 1s step-end infinite",
             },
             keyframes: {
               blink: {
-                '0%, 100%': { opacity: '1' },
-                '50%': { opacity: '0' },
-              }
-            }
-          }
-        }
-      }
+                "0%, 100%": { opacity: "1" },
+                "50%": { opacity: "0" },
+              },
+            },
+          },
+        },
+      };
     </script>
     <style>
       body {
@@ -37,19 +41,20 @@
         background-color: #292524; /* Stone 800 */
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.2.1/",
-    "react": "https://aistudiocdn.com/react@^19.2.1",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
-    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
-    "vite": "https://aistudiocdn.com/vite@^7.2.6"
-  }
-}
-</script>
-</head>
+    <script type="importmap">
+      {
+        "imports": {
+          "react/": "https://aistudiocdn.com/react@^19.2.1/",
+          "react": "https://aistudiocdn.com/react@^19.2.1",
+          "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+          "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+          "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+          "vite": "https://aistudiocdn.com/vite@^7.2.6"
+        }
+      }
+    </script>
+    <script type="module" src="/index.tsx"></script>
+  </head>
   <body>
     <div id="root"></div>
   </body>
